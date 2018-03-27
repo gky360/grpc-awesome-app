@@ -39,8 +39,8 @@ func (s *bookServiceServerImpl) ListBooks(ctx context.Context, req *api_pb.ListB
 	// return nil, status.Error(codes.Unimplemented, "TODO: You should implement it!")
 	resp := &api_pb.ListBooksResponse{}
 	resp.Books = []*api_pb.Book{
-		&api_pb.Book{BookId: "1"},
-		&api_pb.Book{BookId: "2"},
+		&api_pb.Book{BookId: "1", Title: "Star Wars I", Author: "George Lucas"},
+		&api_pb.Book{BookId: "2", Title: "Star Wars II", Author: "George Lucas"},
 	}
 	return resp, nil
 }
