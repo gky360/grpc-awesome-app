@@ -36,7 +36,13 @@ func (s *bookServiceServerImpl) RegisterWithHandler(ctx context.Context, mux *ru
 
 func (s *bookServiceServerImpl) ListBooks(ctx context.Context, req *api_pb.ListBooksRequest) (*api_pb.ListBooksResponse, error) {
 	// TODO: Not yet implemented.
-	return nil, status.Error(codes.Unimplemented, "TODO: You should implement it!")
+	// return nil, status.Error(codes.Unimplemented, "TODO: You should implement it!")
+	resp := &api_pb.ListBooksResponse{}
+	resp.Books = []*api_pb.Book{
+		&api_pb.Book{BookId: "1"},
+		&api_pb.Book{BookId: "2"},
+	}
+	return resp, nil
 }
 
 func (s *bookServiceServerImpl) GetBook(ctx context.Context, req *api_pb.GetBookRequest) (*api_pb.Book, error) {

@@ -1,6 +1,7 @@
 package app
 
 import (
+	"github.com/gky360/grpc-awesome-app/app/server"
 	"github.com/izumin5210/grapi/pkg/grapiserver"
 )
 
@@ -9,7 +10,7 @@ func Run() error {
 	s := grapiserver.New(
 		grapiserver.WithDefaultLogger(),
 		grapiserver.WithServers(
-		// TODO
+			server.NewBookServiceServer(),
 		),
 	)
 	return s.Serve()
